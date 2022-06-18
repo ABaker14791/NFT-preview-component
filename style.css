@@ -4,6 +4,7 @@
     /* Primary */
     --soft-blue: hsl(215, 51%, 70%);
     --cyan: hsl(178, 100%, 50%);
+    --cyan-overlay: hsla(178, 100%, 50%, 50%);
     /* Neutral */
     --main-bg-color: hsl(217, 54%, 11%);
     --card-bg-color: hsl(216, 50%, 16%);
@@ -27,6 +28,7 @@ body {
 p {
     font-size: var(--fontSize);
     color: var(--soft-blue);
+    font-weight: 300;
 }
 
 h1 {
@@ -52,13 +54,34 @@ h1 {
 
 .hero-img {
     border-radius: 12px;
+    width: 100%;
+    background-image: url(./images/image-equilibrium.jpg);
+    aspect-ratio: 1;
+    background-size: contain;
 }
+
+.overlay {
+    background-color: var(--cyan-overlay);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s;
+}
+
+.overlay:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
 
 .row {
     display: flex;
     flex-direction: row;
     justify-content:space-between;
-    margin-top: 1rem;
+    margin-top: 1.2rem;
     margin-bottom: 1rem;
 }
 
@@ -110,6 +133,10 @@ h1 {
     color: var(--soft-blue);
     margin-left: 10px;
     cursor: pointer;
+}
+
+.author span {
+    color: var(--white)
 }
 
 .author span:hover {
